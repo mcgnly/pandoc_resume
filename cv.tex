@@ -1,0 +1,136 @@
+% Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+% Copyright 2014 Mark Szepieniec <http://github.com/mszep>
+% 
+% ConText style for making a resume with pandoc. Inspired by moderncv.
+% 
+% This CSS document is delivered to you under the CC BY-SA 3.0 License.
+% https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+
+\startmode[*mkii]
+  \enableregime[utf-8]  
+  \setupcolors[state=start]
+\stopmode
+
+\setupcolor[hex]
+\definecolor[titlegrey][h=757575]
+\definecolor[sectioncolor][h=397249]
+\definecolor[rulecolor][h=9cb770]
+
+% Enable hyperlinks
+\setupinteraction[state=start, color=sectioncolor]
+
+\setuppapersize [A4][A4]
+\setuplayout    [width=middle, height=middle,
+                 backspace=20mm, cutspace=0mm,
+                 topspace=10mm, bottomspace=20mm,
+                 header=0mm, footer=0mm]
+
+%\setuppagenumbering[location={footer,center}]
+
+\setupbodyfont[11pt, helvetica]
+
+\setupwhitespace[medium]
+
+\setupblackrules[width=31mm, color=rulecolor]
+
+\setuphead[chapter]      [style=\tfd]
+\setuphead[section]      [style=\tfd\bf, color=titlegrey, align=middle]
+\setuphead[subsection]   [style=\tfb\bf, color=sectioncolor, align=right,
+                          before={\leavevmode\blackrule\hspace}]
+\setuphead[subsubsection][style=\bf]
+
+\setuphead[chapter, section, subsection, subsubsection][number=no]
+
+%\setupdescriptions[width=10mm]
+
+\definedescription
+  [description]
+  [headstyle=bold, style=normal,
+   location=hanging, width=18mm, distance=14mm, margin=0cm]
+
+\setupitemize[autointro, packed]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
+
+\setuptables[textwidth=max, HL=none]
+
+\setupthinrules[width=15em] % width of horizontal rules
+
+\setupdelimitedtext
+  [blockquote]
+  [before={\setupalign[middle]},
+   indentnext=no,
+  ]
+
+
+\starttext
+
+\section[katie-mcginley]{Katie McGinley}
+
+frontend developer mcgnly.com github.com/mcgnly
+
+Berlin, Germany
+katie@mcgnly.com
+0049 176 3860 4667
+\subsection[work-experience]{Work Experience}
+
+Front end developer, relayr December 2015-present - developed
+notification service dashboard with react, redux, and webpack - created
+javascript SDK for notification service API using ES6 and webpack -
+reworked javascript SDK for main product API using ES6 and webpack
+
+\subsection[side-projects]{Side Projects}
+
+\useURL[url1][https://github.com/mcgnly/email-keyword][][AFP-Alert]\from[url1]
+> Amanda Palmer is an American musician who tours a lot, and has a
+tenency to do free concerts here and there with short notice given on
+Twitter. I created a tool to watch her twitter and send out an email
+alert when she mentions a chosen town, so that people who sign up for
+the service will know if she is thinking of coming to their area. Tool
+and website built with meteor, database to hold collections of emails
+and keywords on Mongo, hosted on AWS. Available at:
+http://afp-alert.mcgnly.com/
+
+\useURL[url2][https://github.com/mcgnly/basic-redux][][Basic
+Redux]\from[url2] > A teaching tool for the basics of development in
+react and how to incorporate redux, to explain the basics and make it
+easy to interact with different elements to better understand how they
+fit together. Built using create-react-app, redux, less, and gulp.
+
+https://github.com/mcgnly/alexa-iss > One of a series of apps built for
+Amazon Alexa. Takes the current time and returns the point on Earth over
+which the International Space Station is at this very second. Built
+using Node and Amazon Lambda. Available at:
+\useURL[url3][https://www.amazon.com/mcgnly-Space-Station/dp/B01MZ2ONRB/ref=sr_1_2?s=digital-skills&ie=UTF8&qid=1486298736&sr=1-2&keywords=mcgnly][][the
+Alexa app store]\from[url3]
+
+\useURL[url4][https://github.com/mcgnly/million-monkeys][][Million
+Monkeys]\from[url4] > A toy command-line app that, when given a
+particular string, will replicate it using randomly generated
+characters, and count the number of repetitions it takes to recreate the
+given word or phrase.
+
+\useURL[url5][https://github.com/mcgnly/mcgnly-home][][mcgnly.com]\from[url5]
+> The source code for my introduction website. My focus here was
+creating a concise overview of the projects I have worked on until now,
+a place to host my resume, and to learn concepts relating to
+accessability. Built using Github-pages. Found at: www.mcgnly.com
+
+\subsection[education]{Education}
+
+\startitemize[packed]
+\item
+  Bachelor of Science in Mechanical Engineering, University of
+  Pittsburgh
+\stopitemize
+
+\subsection[technical-skills]{Technical Skills}
+
+developer-related: - react - redux - webpack - gulp - javascript ES6
+
+Non-developer: - 3d mechanical design usind Solidworks and Rhino -
+German, French, Italian
+
+\stoptext
