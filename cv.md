@@ -40,6 +40,7 @@ Side Projects
 
 -	[AFP-Alert](https://github.com/mcgnly/email-keyword): 
 	 Amanda Palmer is an American musician who tours a lot, and has a tenency to do free concerts here and there with short notice given on Twitter. I created a tool to watch her twitter and send out an email alert when she mentions a chosen town, so that people who sign up for the service will know if she is thinking of coming to their area. Tool and website built with meteor, database to hold collections of emails and keywords on Mongo, hosted on AWS. Available at: http://afp-alert.mcgnly.com\
+	 
 
 -	[mcgnly.com](https://github.com/mcgnly/mcgnly-home):
 	The source code for my introduction website. My focus here was creating a concise overview of the projects I have worked on until now, a place to host my resume, and to learn concepts relating to accessability. Hosted on using Github-pages. Found at: www.mcgnly.com
@@ -72,7 +73,7 @@ Side Projects
 
 **Non-developer-related:**
 
-- 3d mechanical design usind Solidworks and Rhino\
+- 3d mechanical design using Solidworks, OnShape, and Rhino\
 - ruggedized design for 2-part injection molding\
 - design for IP-67 water and dust ingress protection\
 - six-sigma green-belt certification\
