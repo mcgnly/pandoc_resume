@@ -1,12 +1,12 @@
 all: html pdf docx rtf
 
-# pdf: cv.pdf
-# cv.pdf: cv.md
-# 	pandoc --standalone --template style_chmduquesne.tex \
-# 	--from markdown --to context \
-# 	-V papersize=A4 \
-# 	-o cv.tex cv.md; \
-# 	pdflatex cv.tex
+pdf: cv.pdf
+cv.pdf: cv.md
+	pandoc --standalone --template style_chmduquesne.tex \
+	--from markdown --to context \
+	-V papersize=A4 \
+	-o cv.tex cv.md; \
+	context cv.tex
 
 html: cv.html
 cv.html: style_chmduquesne.css cv.md

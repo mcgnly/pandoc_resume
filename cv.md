@@ -26,9 +26,9 @@ Work Experience
 	
 * lead developer for notification service dashboard with react, redux, gulp, and webpack, testing with mocha/chai, and CI using Jenkins
 
-* dashboard for batch-data download service using angular, webpack, and gulp
+* frontend developer for batch-data download service using angular, webpack, and gulp
 
-* dashboard for sensor data analysis using react, redux, gulp, and webpack
+* frontend developer for sensor data analysis using react, redux, gulp, and webpack
 
 * lead developer for javascript SDK for notification service API using ES6 and webpack
 
