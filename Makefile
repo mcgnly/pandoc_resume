@@ -8,11 +8,11 @@ cv.pdf: cv.md
 	-o cv.tex cv.md; \
 	context cv.tex
 
-html: cv.html
-cv.html: style_chmduquesne.css cv.md
+html: index.html
+index.html: style_chmduquesne.css cv.md
 	pandoc --standalone -H style_chmduquesne.css \
         --from markdown --to html \
-        -o cv.html cv.md
+        -o index.html cv.md
 
 docx: cv.docx
 cv.docx: cv.md
@@ -23,7 +23,7 @@ cv.rtf: cv.md
 	pandoc -s -S cv.md -o cv.rtf
 
 clean:
-	rm cv.html
+	rm index.html
 	rm cv.tex
 	rm cv.tuc
 	rm cv.log
