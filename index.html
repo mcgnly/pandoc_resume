@@ -4,50 +4,190 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title>The Markdown Resume</title>
+  <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <style type="text/css">
+  /*
+   * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+   *
+   * CSS for making a resume with pandoc. Inspired by moderncv.
+   *
+   * This CSS document is delivered to you under the CC BY-SA 3.0 License.
+   * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+   */
+  
+  /* Whole document */
+  body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width: 800px;
+      margin: auto;
+      background: #FFFFFF;
+      padding: 10px 10px 10px 10px;
+  }
+  
+  /* Title of the resume */
+  h1 {
+      font-size: 55px;
+      color: #757575;
+      text-align:center;
+      margin-bottom:15px;
+  }
+  h1:hover {
+      background-color: #757575;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 1px #333;
+  }
+  
+  /* Titles of categories */
+  h2 {
+      /* This is called "sectioncolor" in the ConTeXt stylesheet. */
+      color: #397249;
+  }
+  /* There is a bar just before each category */
+  h2:before {
+      content: "";
+      display: inline-block;
+      margin-right:1%;
+      width: 16%;
+      height: 10px;
+      /* This is called "rulecolor" in the ConTeXt stylesheet. */
+      background-color: #9CB770;
+  }
+  h2:hover {
+      background-color: #397249;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 1px #333;
+  }
+  
+  /* Definitions */
+  dt {
+      float: left;
+      clear: left;
+      width: 17%;
+      /*font-weight: bold;*/
+  }
+  dd {
+      margin-left: 17%;
+  }
+  p {
+      margin-top:0;
+      margin-bottom:7px;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+      text-align: center
+  }
+  
+  /* Links */
+  a {
+      text-decoration: none;
+      color: #397249;
+  }
+  a:hover, a:active {
+      background-color: #397249;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px #333;
+  }
+  
+  /* Horizontal separators */
+  hr {
+      color: #A6A6A6;
+  }
+  
+  table {
+      width: 100%;
+  }
+  </style>
 </head>
 <body>
-<div id="header">
-<h1 class="title">The Markdown Resume</h1>
-</div>
-<p>Maintaining a resume is one of those annoying tasks that always takes up much more time than it should. Compounding this is the fact that resumes are regularly requested in different formats: raw text, pdf, Microsoft Word, etc. In addition, it might be desirable to have a HTML version online somewhere for added visibility. How then to manage this complexity? No one wants to manually update four versions of their resume, and the pdf conversion tools included with word processors leave much to be desired.</p>
-<p>Christophe-Marie Duquesne has a great <a href="http://blog.chmd.fr/editing-a-cv-in-markdown-with-pandoc.html">blog post</a> in which he shows that using the document translation tool <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>, you can maintain your resume in <a href="http://daringfireball.net/projects/markdown/syntax">markdown format</a> and convert to other formats such as html and Word at will.</p>
-<p>This is convenient because:</p>
+<h1 id="katie-mcginley">Katie McGinley</h1>
+<hr />
+<blockquote>
+<p>Frontend Developer</p>
+</blockquote>
+<hr />
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Berlin, Germany</td>
+<td align="right">katie@mcgnly.com</td>
+</tr>
+<tr class="even">
+<td align="left">mcgnly.com</td>
+<td align="right"><span class="citation">@mcgnly</span></td>
+</tr>
+<tr class="odd">
+<td align="left">github.com/mcgnly</td>
+<td align="right">0049 176 3860 4667</td>
+</tr>
+</tbody>
+</table>
+<h2 id="work-experience">Work Experience</h2>
+<p><strong>Frontend developer, relayr</strong></p>
+<p><em>December 2015-present</em></p>
 <ul>
-<li>It means there is only one file you need to update to make any changes.</li>
-<li>Markdown is designed to be human-readable, so if you need a raw text version of your resume, no transformation is needed.</li>
-<li>Markdown has syntax for section headers, lists, tables and more, so you can add as much structure as you want to your resume.</li>
-<li>Being a format designed (partly) for human consumption and creation, it is also an appropriate format to keep in version control.</li>
+<li><p>member of core-products development team</p></li>
+<li><p>reworked authorization and user-creation flow for core business platform</p></li>
+<li><p>developed react-based UI components for team use in future products</p></li>
+<li><p>migrated internal services to new backend architecture available after acquisition, including SDK</p></li>
+<li><p>lead developer for notification service dashboard</p></li>
+<li><p>frontend developer for batch-data download service</p></li>
+<li><p>frontend developer for sensor data analysis using</p></li>
+<li><p>lead developer for javascript SDK for notification service API</p></li>
+<li><p>reworked javascript SDK for main product API</p></li>
 </ul>
-<p>This is what a simple resume in markdown format looks like:</p>
-<script src="https://gist.github.com/mszep/d3235240cc6653d6eeaa.js"></script>
-
-<p>However, in the above approach the generation of a pdf version (arguably the most important) is problematic. The suggestion is to use the <a href="http://wkhtmltopdf.org/">wkhtmltopdf tool</a>, which takes the pandoc-generated HTML and uses the webkit browser engine to generate a pdf. While this will preserve the look and feel of the resume, the pdf output is suboptimal, as webkit is not a typesetting engine. Most importantly, it does not handle page breaks well -- in some cases even putting a page break right across a line of text.</p>
-<p>On the other hand, TeX-based typesetting systems are designed for this task. Moreover, pandoc supports two types of TeX output: LaTeX and <a href="http://wiki.contextgarden.net/">ConTeXt</a>. I chose the latter since it seemed interesting, is more focused on page layout, and is not specifically geared towards scientific documents. Through trial and error, I was able to create a style.tex which comes close to emulating Christophe-Marie's style.css, resulting in a nicely typeset pdf resume which looks quite similar to the HTML:</p>
-<p><a href="resume.html">HTML version</a> of the resume:</p>
-<iframe src="resume.html" width=100% height=500px></iframe>
-
-<p><a href="resume.pdf">PDF version</a> of the resume:</p>
-<object data="resume.pdf" type="application/pdf" width=100% height=500px></object>
-
-<p>The repository is <a href="https://github.com/mszep/pandoc_resume">here</a> (pull requests welcome!), and it includes a Makefile, so the instructions to make your own resume are:</p>
-<pre><code>git clone https://github.com/mszep/pandoc_resume
-cd pandoc_resume
-vim resume.md   #insert your own resume info
-make</code></pre>
-<p>You will need both pandoc and ConTeXt installed on your system, which on Debian and derivatives can be achieved with</p>
-<pre><code>sudo apt-get install pandoc context</code></pre>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-52741296-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<h2 id="side-projects">Side Projects</h2>
+<ul>
+<li><p><a href="https://github.com/mcgnly/volunqueer">Volunqueer</a>: Platform based on react to match organizations with individuals wanting to do community service and volunteer within the LGBTQ community- as a volunteer, you can filter the suggestions based on your interests and the kind of work which you would like to do, and sign up for a weekly digest of new volunteer opportunities that match your interests. As an organization, you can post volunteer positions quickly, and match with volunteers. Winner of the 2017 Unicorns in Tech Hackathon. Available at: http://volunqueer.herokuapp.com</p></li>
+<li><a href="https://github.com/mcgnly/email-keyword">AFP-Alert</a>: Amanda Palmer is an American musician who tours a lot, and has a tenency to do free concerts here and there with short notice given on Twitter. I created a tool to watch her twitter and send out an email alert when she mentions a chosen town, so that people who sign up for the service will know if she is thinking of coming to their area. Tool and website built with meteor, database to hold collections of emails and keywords on Mongo, hosted on AWS. Available at: http://afp-alert.mcgnly.com<br />
+</li>
+<li><p><a href="https://github.com/mcgnly/mcgnly-home">mcgnly.com</a>: The source code for my introduction website. My focus here was creating a concise overview of the projects I have worked on until now, a place to host my resume, and to learn concepts relating to accessability. Hosted on using Github-pages. Found at: www.mcgnly.com</p></li>
+<li><p><a href="https://github.com/mcgnly/basic-redux">Basic Redux</a>: A teaching tool for the basics of development in react and how to incorporate redux, to explain the basics and make it easy to interact with different elements to better understand how they fit together. Built using create-react-app, redux, less, and gulp.</p></li>
+<li><p><a href="https://github.com/mcgnly/alexa-iss">Space Station Locator</a>: One of a series of apps built for Amazon Alexa. Takes the current time and returns the point on Earth over which the International Space Station is at this very second. Built using Node and Amazon Lambda. Available at: <a href="https://www.amazon.com/mcgnly-Space-Station/dp/B01MZ2ONRB/ref=sr_1_2?s=digital-skills&amp;ie=UTF8&amp;qid=1486298736&amp;sr=1-2&amp;keywords=mcgnly">the Alexa app store</a></p></li>
+<li><p><a href="https://github.com/mcgnly/million-monkeys">Million Monkeys</a>: A python command-line app that, when given a particular string, will replicate it using randomly generated characters, and count the number of repetitions it takes to recreate the given word or phrase.</p></li>
+</ul>
+<h2 id="education">Education</h2>
+<ul>
+<li>Bachelor of Science in Mechanical Engineering, University of Pittsburgh</li>
+</ul>
+<h2 id="technical-skills">Technical Skills</h2>
+<p><strong>Developer-related:</strong></p>
+<ul>
+<li>react<br />
+</li>
+<li>redux<br />
+</li>
+<li>angular<br />
+</li>
+<li>webpack<br />
+</li>
+<li>gulp<br />
+</li>
+<li>javascript ES6 and ES7<br />
+</li>
+<li>CSS and LESS<br />
+</li>
+<li>html<br />
+</li>
+<li>unit testing with mocha, chai, and Jest<br />
+</li>
+<li>CI using Jenkins<br />
+</li>
+</ul>
+<p><strong>Non-developer-related:</strong></p>
+<ul>
+<li>3d mechanical design using Solidworks, OnShape, and Rhino<br />
+</li>
+<li>ruggedized design for 2-part injection molding<br />
+</li>
+<li>design for IP-67 water and dust ingress protection<br />
+</li>
+<li>six-sigma green-belt certification<br />
+</li>
+<li>German, French, Italian<br />
+</li>
+</ul>
 </body>
 </html>
